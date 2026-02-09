@@ -36,6 +36,8 @@ Se ha utilizado una **cola (FIFO)** para gestionar la frontera, lo que garantiza
 | 13 | **$K (I)$** | $i, \dots, K(I)$ | $J(I), O(L), N(K)$ |
 | 14 | **$J (I)$** | $i, \dots, J(I)$ | $O(L), N(K), \mathbf{e(J)}$ |
 
+!["Mapa ejercicio 1"](docs/mapa_ejercicio_1SolutionBusqueda.png)
+
 ---
 
 ### Árbol de Búsqueda Visual
