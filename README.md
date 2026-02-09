@@ -1,13 +1,17 @@
-# Ejercicio 1:
+# Ejercicios módulo Modelos de Inteligencia Artificial.
 
-## Búsqueda en Anchura (Breadth-First Search)
-### Descripción del Problema
+## Resolución de problemas mediante búsquedas.
+
+## Ejercicio 1:
+
+### Búsqueda en Anchura (Breadth-First Search)
+#### Descripción del Problema
 Este ejercicio consiste en encontrar el camino más corto en un entorno de rejilla (grid) desde una posición inicial **i** hasta un objetivo **e**. El agente (NPC) puede moverse en cuatro direcciones (horizontal y vertical) con un coste unitario por movimiento, evitando las zonas bloqueadas (obstáculos).
 
 !["Mapa ejercicio 1"](docs/mapa_ejercicio_1.png)
 
 
-#### Detalles del Entorno:
+##### Detalles del Entorno:
 - **Estado Inicial:** (i).
 - **Estado Objetivo:** (e).
 - **Algoritmo Aplicado:** Búsqueda en Anchura (BFS).
@@ -15,7 +19,7 @@ Este ejercicio consiste en encontrar el camino más corto en un entorno de rejil
 
 ---
 
-### Metodología y Traza de Ejecución
+#### Metodología y Traza de Ejecución
 Se ha utilizado una **cola (FIFO)** para gestionar la frontera, lo que garantiza que el camino encontrado sea el óptimo en cuanto a número de pasos. A continuación, se detalla la evolución de los conjuntos de nodos durante la búsqueda:
 
 | Paso | Nodo Expandido (Padre) | Exploradas (Nodo(Padre)) | Fronteras / Cola (Nodo(Padre)) |
@@ -42,7 +46,7 @@ Se ha utilizado una **cola (FIFO)** para gestionar la frontera, lo que garantiza
 ---
 
 
-### Árbol de Búsqueda Visual
+#### Árbol de Búsqueda Visual
 El siguiente diagrama representa la jerarquía de exploración. La línea resaltada en verde indica el camino solución reconstruido a través de los nodos padres.
 
 ```mermaid
@@ -76,14 +80,14 @@ graph TD
 
 ```
 
-## Búsqueda en Profundidad (Depth-First Search)
+### Búsqueda en Profundidad (Depth-First Search)
 
-### Descripción del Problema
+#### Descripción del Problema
 En este caso, resolvemos el mismo entorno de rejilla pero aplicando el algoritmo de **Búsqueda en Profundidad (DFS)**. El objetivo es observar cómo la estrategia de exploración cambia radicalmente, priorizando la profundidad sobre la proximidad al nodo inicial.
 
 !["Mapa ejercicio 1"](docs/mapa_ejercicio_1.png)
 
-#### Detalles Técnicos:
+##### Detalles Técnicos:
 - **Estado Inicial:** (i).
 - **Estado Objetivo:** (e).
 - **Estructura de Datos:** Pila (Stack - LIFO).
@@ -91,7 +95,7 @@ En este caso, resolvemos el mismo entorno de rejilla pero aplicando el algoritmo
 
 ---
 
-### Metodología y Traza de Ejecución (DFS)
+#### Metodología y Traza de Ejecución (DFS)
 En DFS, el último nodo en entrar en la frontera es el primero en ser expandido. Esto genera una exploración en forma de "hilo" o camino único hasta encontrar un callejón sin salida.
 
 | Paso | Nodo Expandido (Padre) | Exploradas (Nodo(Padre)) | Fronteras / Pila (Nodo(Padre)) |
@@ -110,7 +114,7 @@ En DFS, el último nodo en entrar en la frontera es el primero en ser expandido.
 
 ---
 
-### Árbol de Exploración DFS
+#### Árbol de Exploración DFS
 A diferencia del árbol de BFS, aquí se observa cómo el algoritmo "bucea" por la rama de **K** y **N** antes de retroceder (backtracking) para encontrar el nodo **e** a través de **J**.
 
 ```mermaid
@@ -143,9 +147,9 @@ graph TD
     style Q fill:#ff9999
 ```
 
-# Ejercicio 2:
-## Búsqueda por coste uniforme
-### Descripción del Problema
+## Ejercicio 2:
+### Búsqueda por coste uniforme
+#### Descripción del Problema
 En el hipotético caso de que el servicio Google Maps empleara el algoritmo de búsqueda por coste uniforme para encontrar la ruta más corta (en km) entre dos localidades, calcula la solución que ofrecería para la ruta Ourense-Calatayud dadas las siguientes distancias kilométricas:
 
 | Trayecto            | Distancia en km      |
@@ -173,7 +177,7 @@ En el hipotético caso de que el servicio Google Maps empleara el algoritmo de b
 | Logroño, Soria      | 106                 |
 | Soria, Calatayud    | 91                  |
 
-### Grafo Detallado de Búsqueda por Coste Uniforme (BCU)
+#### Grafo Detallado de Búsqueda por Coste Uniforme (BCU)
 Este grafo muestra la expansión del algoritmo con los pesos de cada arista (distancia en km) y el coste acumulado en cada nodo.
 
 ```mermaid
@@ -201,3 +205,12 @@ graph TD
 
     style C fill:#f96,stroke:#333,stroke-width:4px
     style O fill:#bbf,stroke:#333,stroke-width:2px
+```
+#### Resultado de la Ruta Óptima
+La solución encontrada ofrece una distancia total de 641 km, siguiendo este trayecto:
+1. **Ourense** $\rightarrow$ **Benavente** (236 km)
+2. **Benavente** $\rightarrow$ **Valladolid** (112 km)
+3. **Valladolid** $\rightarrow$ **Aranda** (95 km)
+4. **Aranda** $\rightarrow$ **Osma** (58 km)
+5. **Osma** $\rightarrow$ **Calatayud** (140 km)
+   * **Coste Total: 641**
