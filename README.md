@@ -4,9 +4,12 @@
 ### Descripción del Problema
 Este ejercicio consiste en encontrar el camino más corto en un entorno de rejilla (grid) desde una posición inicial **i** hasta un objetivo **e**. El agente (NPC) puede moverse en cuatro direcciones (horizontal y vertical) con un coste unitario por movimiento, evitando las zonas bloqueadas (obstáculos).
 
+!["Mapa ejercicio 1"](docs/mapa_ejercicio_1.png)
+
+
 #### Detalles del Entorno:
-- **Estado Inicial (i):** Celda E5.
-- **Estado Objetivo (e):** Celda D2.
+- **Estado Inicial:** (i).
+- **Estado Objetivo:** (e).
 - **Algoritmo Aplicado:** Búsqueda en Anchura (BFS).
 - **Orden de Expansión:** Arriba, Abajo, Izquierda, Derecha.
 
@@ -74,9 +77,11 @@ graph TD
 ### Descripción del Problema
 En este caso, resolvemos el mismo entorno de rejilla pero aplicando el algoritmo de **Búsqueda en Profundidad (DFS)**. El objetivo es observar cómo la estrategia de exploración cambia radicalmente, priorizando la profundidad sobre la proximidad al nodo inicial.
 
+!["Mapa ejercicio 1"](docs/mapa_ejercicio_1.png)
+
 #### Detalles Técnicos:
-- **Estado Inicial (i):** Celda E5.
-- **Estado Objetivo (e):** Celda D2.
+- **Estado Inicial:** (i).
+- **Estado Objetivo:** (e).
 - **Estructura de Datos:** Pila (Stack - LIFO).
 - **Orden de Prioridad:** Arriba, Abajo, Izquierda, Derecha.
 
