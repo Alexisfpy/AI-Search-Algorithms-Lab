@@ -36,9 +36,11 @@ Se ha utilizado una **cola (FIFO)** para gestionar la frontera, lo que garantiza
 | 13 | **$K (I)$** | $i, \dots, K(I)$ | $J(I), O(L), N(K)$ |
 | 14 | **$J (I)$** | $i, \dots, J(I)$ | $O(L), N(K), \mathbf{e(J)}$ |
 
-!["Mapa ejercicio 1"](docs/mapa_ejercicio_1SolutionBusqueda.png)
 
 ---
+!["Mapa ejercicio 1"](docs/mapa_ejercicio_1SolutionBusqueda.png)
+---
+
 
 ### Árbol de Búsqueda Visual
 El siguiente diagrama representa la jerarquía de exploración. La línea resaltada en verde indica el camino solución reconstruido a través de los nodos padres.
