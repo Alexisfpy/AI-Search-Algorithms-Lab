@@ -1,4 +1,4 @@
-# Ejercicio 1: Búsquedas
+# Ejercicio 1:
 
 ## Búsqueda en Anchura (Breadth-First Search)
 ### Descripción del Problema
@@ -141,3 +141,63 @@ graph TD
     style K fill:#ff9999
     style N fill:#ff9999
     style Q fill:#ff9999
+```
+
+# Ejercicio 2:
+## Búsqueda por coste uniforme
+### Descripción del Problema
+En el hipotético caso de que el servicio Google Maps empleara el algoritmo de búsqueda por coste uniforme para encontrar la ruta más corta (en km) entre dos localidades, calcula la solución que ofrecería para la ruta Ourense-Calatayud dadas las siguientes distancias kilométricas:
+
+| Trayecto            | Distancia en km      |
+| :------------------ | :------------------:|
+| Ourense, Ponferrada | 175                 |
+| Ourense, Benavente  | 236                 |
+| Ponferrada, León    | 113                 |
+| Ponferrada, Benavente | 125               |
+| Benavente, León     | 75                  |
+| Benavente, Valladolid | 112               |
+| Benavente, Palencia | 112                 |
+| Palencia, León      | 131                 |
+| Palencia, Valladolid | 48                 |
+| Palencia, Osorno    | 49                  |
+| Palencia, Burgos    | 92                  |
+| León, Osorno        | 121                 |
+| Osorno, Burgos      | 59                  |
+| Valladolid, Aranda  | 95                  |
+| Burgos, Aranda      | 84                  |
+| Aranda, Osma        | 58                  |
+| Osma, Calatayud     | 140                 |
+| Osma, Soria         | 58                  |
+| Burgos, Soria       | 143                 |
+| Burgos, Logroño     | 150                 |
+| Logroño, Soria      | 106                 |
+| Soria, Calatayud    | 91                  |
+
+### Grafo Detallado de Búsqueda por Coste Uniforme (BCU)
+Este grafo muestra la expansión del algoritmo con los pesos de cada arista (distancia en km) y el coste acumulado en cada nodo.
+
+```mermaid
+graph TD
+    O(Ourense: 0) -- 175 --> P(Ponferrada: 175)
+    O -- 236 --> B(Benavente: 236)
+
+    P -- 113 --> L1(León: 288)
+    P -- 125 --> B_alt(Benavente: 300 - Descartado)
+
+    B -- 75 --> L2(León: 311 - Descartado)
+    B -- 112 --> V(Valladolid: 348)
+    B -- 112 --> PAL(Palencia: 348)
+
+    PAL -- 49 --> OS(Osorno: 397)
+    V -- 95 --> A(Aranda: 443)
+
+    PAL -- 92 --> BUR(Burgos: 440)
+    A -- 58 --> OSM(Osma: 501)
+
+    OSM -- 58 --> S(Soria: 559)
+    OSM -- 140 --> C(Calatayud: 641)
+
+    S -- 91 --> C2(Calatayud: 650 - Descartado)
+
+    style C fill:#f96,stroke:#333,stroke-width:4px
+    style O fill:#bbf,stroke:#333,stroke-width:2px
