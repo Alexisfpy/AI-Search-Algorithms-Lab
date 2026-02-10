@@ -1,24 +1,28 @@
 # Ejercicios módulo Modelos de Inteligencia Artificial.
+🧠 *Especialidad Inteligencia Artificial y Big Data.* 📊
 
 ## Resolución de problemas mediante búsquedas.
 
 ## Ejercicio 1:
-
-### Búsqueda en Anchura (Breadth-First Search)
-#### Descripción del Problema
-Este ejercicio consiste en encontrar el camino más corto en un entorno de rejilla (grid) desde una posición inicial **i** hasta un objetivo **e**. El agente (NPC) puede moverse en cuatro direcciones (horizontal y vertical) con un coste unitario por movimiento, evitando las zonas bloqueadas (obstáculos).
+### Algoritmos a aplicar:
+1. Búsqueda en anchura.
+2. Búsqueda en profundidad.
+3. Algoritmos A y A*.
+### Descripción del Problema
 
 !["Mapa ejercicio 1"](docs/mapa_ejercicio_1.png)
 
+Este ejercicio consiste en encontrar el camino más corto en un entorno de rejilla (grid) desde una posición inicial **i** hasta un objetivo **e**. El agente (NPC) puede moverse en cuatro direcciones (horizontal y vertical) con un coste unitario por movimiento, evitando las zonas bloqueadas (obstáculos).
 
-##### Detalles del Entorno:
+#### Detalles del Entorno:
 - **Estado Inicial:** (i).
 - **Estado Objetivo:** (e).
-- **Algoritmo Aplicado:** Búsqueda en Anchura (BFS).
 - **Orden de Expansión:** Arriba, Abajo, Izquierda, Derecha.
-
----
-
+- **Coste de movimiento**:
+  * Vertical: 1.
+  * Horizontal: 2.
+  
+### Búsqueda en Anchura (Breadth-First Search)
 #### Metodología y Traza de Ejecución
 Se ha utilizado una **cola (FIFO)** para gestionar la frontera, lo que garantiza que el camino encontrado sea el óptimo en cuanto a número de pasos. A continuación, se detalla la evolución de los conjuntos de nodos durante la búsqueda:
 
@@ -40,9 +44,9 @@ Se ha utilizado una **cola (FIFO)** para gestionar la frontera, lo que garantiza
 | 13 | **$K (I)$** | $i, \dots, K(I)$ | $J(I), O(L), N(K)$ |
 | 14 | **$J (I)$** | $i, \dots, J(I)$ | $O(L), N(K), \mathbf{e(J)}$ |
 
-
 ---
 !["Mapa ejercicio 1"](docs/mapa_ejercicio_1SolutionBusqueda.png)
+
 ---
 
 
@@ -146,6 +150,16 @@ graph TD
     style N fill:#ff9999
     style Q fill:#ff9999
 ```
+
+### Búsqueda A* (Depth-First Search)
+Ejercicio resuelto a mano para práctica de posible examen de este algoritmo en el módulo MIA (Modelos de Inteligencia Artificial)
+#### Declarión
+
+!["Mapa ejercicio 1"](docs/img_solutionA1.jpg)
+
+#### Resolución
+
+!["Mapa ejercicio 1"](docs/img_solutionA2.jpg)
 
 ## Ejercicio 2:
 ### Búsqueda por coste uniforme
